@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RPiSpy Pool Monitor - Debug</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link href="/static/bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/style.css" />
+<script src="/static/bootstrap4.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<!-- Debug template                            -->
+<!-- Used by poolweb.py to generate debug page -->
+<div class="container mt-3">
+  <h1>Debug Page</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sensor ID 1</td>
+        <td>{{data['id1']}}</td>
+      </tr>
+      <tr>
+        <td>Sensor ID 2</td>
+        <td>{{data['id2']}}</td>
+      </tr>
+      <tr>
+        <td>Sensor ID 3</td>
+        <td>{{data['id3']}}</td>
+      </tr>
+      <tr>
+        <td>Temp 1 - Air</td>
+        <td>{{data['t1']}}&deg;{{data['tu']}}</td>
+      </tr>
+      <tr>
+        <td>Temp 2 - Solar In</td>
+        <td>{{data['t2']}}&deg;{{data['tu']}}</td>
+      </tr>
+      <tr>
+        <td>Temp 3 - Solar Out</td>
+        <td>{{data['t3']}}&deg;{{data['tu']}}</td>
+      </tr>
+      <tr>
+        <td>Pump 1 mode</td>
+        <td>{{data['pm']}}</td>
+      </tr>
+      <tr>
+        <td>Pump 1 status</td>
+        <td>{{data['ps']}}</td>
+      </tr>
+      <tr>
+        <td>Pump 2 mode</td>
+        <td>{{data['pm1']}}</td>
+      </tr>
+      <tr>
+        <td>Pump 2 status</td>
+        <td>{{data['ps1']}}</td>
+      </tr>
+      <tr>
+        <td>Schedule Pump 1</td>
+        <td>{{data['hrs']}}</td>
+      </tr>  
+      <tr>
+        <td>Schedule Pump 2</td>
+        <td>{{data['hrs1']}}</td>
+      </tr>
+      <tr>
+        <td>Boost Pump 1 remain</td>
+        <td>{{data['br']}}</td>
+      </tr>        
+      <tr>
+        <td>Boost Pump 2 remain</td>
+        <td>{{data['br1']}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div id="footnote" class="container">
+  <p>Updated {{ data['ts'] }}</p>
+</div>
+
+<div class="container mt-3">
+  <a href="{{ url_for('index') }}" class="btn btn-outline-dark btn-lg" role="button">Back</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RPiSpy Pool Monitor - Schedule</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link href="/static/bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/style.css" />
+<script src="/static/bootstrap4.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<!-- Pump schedule template                       -->
+<!-- Used by poolweb.py to generate schedule page -->
+<div class="container mt-3">
+  <h1>Pump Schedule</h1>
+
+  <form method=POST>
+    <div class="form-group">
+      <div class="checkbox">
+        <label><input type="checkbox" name="hours" value="1" {% if  '1' in hours %}checked{% endif %}>01</label>  
+        <label><input type="checkbox" name="hours" value="2" {% if  '2' in hours %}checked{% endif %}>02</label>  
+        <label><input type="checkbox" name="hours" value="3" {% if  '3' in hours %}checked{% endif %}>03</label>  
+        <label><input type="checkbox" name="hours" value="4" {% if  '4' in hours %}checked{% endif %}>04</label>  
+        <label><input type="checkbox" name="hours" value="5" {% if  '5' in hours %}checked{% endif %}>05</label>  
+        <label><input type="checkbox" name="hours" value="6" {% if  '6' in hours %}checked{% endif %}>06</label>
+        <label><input type="checkbox" name="hours" value="7" {% if  '7' in hours %}checked{% endif %}>07</label>    
+        <label><input type="checkbox" name="hours" value="8" {% if  '8' in hours %}checked{% endif %}>08</label>  
+        <label><input type="checkbox" name="hours" value="9" {% if  '9' in hours %}checked{% endif %}>09</label>  
+        <label><input type="checkbox" name="hours" value="10" {% if '10' in hours %}checked{% endif %}>10</label>  
+        <label><input type="checkbox" name="hours" value="11" {% if '11' in hours %}checked{% endif %}>11</label>  
+        <label><input type="checkbox" name="hours" value="12" {% if '12' in hours %}checked{% endif %}>12</label>
+        <label><input type="checkbox" name="hours" value="13" {% if '13' in hours %}checked{% endif %}>13</label>    
+        <label><input type="checkbox" name="hours" value="14" {% if '14' in hours %}checked{% endif %}>14</label>  
+        <label><input type="checkbox" name="hours" value="15" {% if '15' in hours %}checked{% endif %}>15</label>  
+        <label><input type="checkbox" name="hours" value="16" {% if '16' in hours %}checked{% endif %}>16</label>  
+        <label><input type="checkbox" name="hours" value="17" {% if '17' in hours %}checked{% endif %}>17</label>  
+        <label><input type="checkbox" name="hours" value="18" {% if '18' in hours %}checked{% endif %}>18</label>
+        <label><input type="checkbox" name="hours" value="19" {% if '19' in hours %}checked{% endif %}>19</label>    
+        <label><input type="checkbox" name="hours" value="20" {% if '20' in hours %}checked{% endif %}>20</label>  
+        <label><input type="checkbox" name="hours" value="21" {% if '21' in hours %}checked{% endif %}>21</label>  
+        <label><input type="checkbox" name="hours" value="22" {% if '22' in hours %}checked{% endif %}>22</label>  
+        <label><input type="checkbox" name="hours" value="23" {% if '23' in hours %}checked{% endif %}>23</label>  
+        <label><input type="checkbox" name="hours" value="24" {% if '24' in hours %}checked{% endif %}>24</label>
+      </div>  
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+    <a href="{{ url_for('index') }}" class="btn btn-outline-dark btn-lg" role="button">Back</a>
+  </form>
+
+</div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="container mt-3">
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+</body>
+</html>
