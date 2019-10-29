@@ -206,11 +206,11 @@ def pumpUpdate(mode):
         status = False
     elif mode == 'solar':
             if sunalt > 20 and sunangle > 90 and sunangle < 180:
-            wiringpi.digitalWrite(0, 1) # sets port 0 to ON
-            status = True
-        else:
-            wiringpi.digitalWrite(0, 0) # sets port 0 to OFF
-            status = False
+                wiringpi.digitalWrite(0, 1) # sets port 0 to ON
+                status = True
+            else:
+                wiringpi.digitalWrite(0, 0) # sets port 0 to OFF
+                status = False
     elif mode == 'off':
         wiringpi.digitalWrite(0, 0) # sets port 0 to OFF
         status = False
@@ -261,11 +261,11 @@ def pumpUpdate1(mode1):
         status1 = False
     elif mode1 == 'solar':
             if sunalt > 20 and sunangle > 90 and sunangle < 180:
-            wiringpi.digitalWrite(2, 1) # sets port 2 to ON
-            status1 = True
-        else:
-            wiringpi.digitalWrite(2, 0) # sets port 2 to OFF
-            status1 = False
+                wiringpi.digitalWrite(2, 1) # sets port 2 to ON
+                status1 = True
+            else:
+                wiringpi.digitalWrite(2, 0) # sets port 2 to OFF
+                status1 = False
     elif mode1 == 'off':
         wiringpi.digitalWrite(2, 0) # sets port 2 to OFF
         status1 = False
